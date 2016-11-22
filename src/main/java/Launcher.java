@@ -22,12 +22,12 @@ public class Launcher extends Application {
     public static int REGISTER = 2;
     public static int INGAME = 3;
     public static int GAME_OVER = 4;
-    public static String[] type = {"main.fxml", "login.fxml", "register.fxml", "ingame.fxml", "gameover.fxml"};
+    public static String[] type = {"layout_splash.fxml", "layout_login.fxml", "register.fxml", "ingame.fxml", "gameover.fxml"};
 
     public void start(Stage primaryStage) throws Exception {
         this.launcher = this;
         this.primaryStage = primaryStage;
-        Parent parent = FXMLLoader.load(getClass().getResource("main.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("layout_splash.fxml"));
         Scene scene = new Scene(parent, 480, 800);
         primaryStage.setTitle("안녕");
         primaryStage.setScene(scene);

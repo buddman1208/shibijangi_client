@@ -2,7 +2,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Button?>
-<HBox fx:controller="Controller" xmlns:fx="http://javafx.com/fxml" >    <!-- HBox 컨테이너 선언 -->
+<HBox fx:controller="controller.LoginController" xmlns:fx="http://javafx.com/fxml" >    <!-- HBox 컨테이너 선언 -->
     <padding>
         <Insets top="10" right="10" bottom="10" left="10" />
     </padding>
