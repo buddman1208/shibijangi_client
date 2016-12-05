@@ -1,19 +1,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.Button?>
-<HBox fx:controller="controller.LoginController" xmlns:fx="http://javafx.com/fxml" >    <!-- HBox 컨테이너 선언 -->
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Label?>
+<HBox style="-fx-background-color: #3c3c3c" fx:controller="controller.SplashController" xmlns:fx="http://javafx.com/fxml" >    <!-- HBox 컨테이너 선언 -->
     <padding>
         <Insets top="10" right="10" bottom="10" left="10" />
     </padding>
     <spacing>10</spacing>
-
     <children>
-        <TextField>
-            <prefWidth>200</prefWidth>
-        </TextField>
-        <Button fx:id="button">
-            <text>Confirm</text>
-        </Button>
+        <Label style="-fx-font: 30 Arial;" textFill="white" minWidth="480" minHeight="800" textAlignment="CENTER" alignment="CENTER" text="Loading Data"/>
     </children>
 </HBox>

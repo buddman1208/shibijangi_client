@@ -9,9 +9,9 @@ import java.util.ResourceBundle;
 
 /**
  * Created by Junseok on 2016. 11. 22..
- * @ layout_login
+ * layout_splash
  */
-public class LoginController implements Initializable {
+public class MainController implements Initializable {
 
     @FXML
     Button button;
