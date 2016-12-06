@@ -24,7 +24,7 @@ public class Launcher extends Application {
     public void start(Stage primaryStage) throws Exception {
         this.launcher = this;
         this.primaryStage = primaryStage;
-        Parent parent = FXMLLoader.load(getClass().getResource("fxml/layout_splash.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("fxml/layout_main.fxml"));
         Scene scene = new Scene(parent, 480, 800);
         primaryStage.setTitle("TitleScene");
         primaryStage.setScene(scene);
@@ -36,7 +36,7 @@ public class Launcher extends Application {
         if (sceneType > type.length) return;
         Parent newParent = null;
         try {
-            newParent = FXMLLoader.load(launcher.getClass().getResource(type[sceneType]));
+            newParent = FXMLLoader.load(launcher.getClass().getResource("fxml/" + type[sceneType]));
             Scene newScene = new Scene(newParent, WIDTH, HEIGHT);
             primaryStage.setScene(newScene);
         } catch (Exception e) {

@@ -1,0 +1,16 @@
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Spinner?>
+<VBox style="-fx-background-color: #33aa00" fx:controller="MainController" xmlns:fx="http://javafx.com/fxml" >    <!-- HBox 컨테이너 선언 -->
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10" />
+    </padding>
+    <spacing>10</spacing>
+    <children>
+        <Spinner fx:id="spinner" minWidth="480"/>
+        <Label style="-fx-font: 30 Arial;" textFill="white" minWidth="480" minHeight="800" textAlignment="CENTER" alignment="CENTER" text="Loading Data"/>
+    </children>
+</VBox>
