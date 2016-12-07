@@ -25,7 +25,7 @@ public class Launcher extends Application {
         this.launcher = this;
         this.primaryStage = primaryStage;
         Parent parent = FXMLLoader.load(getClass().getResource("fxml/layout_main.fxml"));
-        Scene scene = new Scene(parent, 480, 800);
+        Scene scene = new Scene(parent, 480, 250);
         primaryStage.setTitle("TitleScene");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);

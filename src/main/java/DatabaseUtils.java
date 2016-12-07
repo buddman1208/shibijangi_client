@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class DatabaseUtils {
     public DatabaseUtils() {
-        printArray(getFinanceArray(true));
+        printArray(getFinanceArray(false));
     }
 
     ArrayList<String> arrayList = new ArrayList<String>();
@@ -21,7 +21,7 @@ public class DatabaseUtils {
         Document doc = null;
         try {
             doc = Jsoup.connect("http://info.finance.naver.com/marketindex/exchangeList.nhn").get();
-        } catch (IOException e) {
+        } catch (IOException e) {   
             e.printStackTrace();
         }
         Elements data = doc.select(CSSQuery);

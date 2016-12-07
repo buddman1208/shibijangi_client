@@ -1,11 +1,15 @@
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Spinner;
+import javafx.scene.control.*;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 /**
@@ -14,15 +18,54 @@ import java.util.ResourceBundle;
  */
 public class MainController implements Initializable {
 
+    double currentUSDFinance = 0.0;
     @FXML
     Spinner<String> spinner;
-    public void initialize(URL location, ResourceBundle resources) {
+    @FXML
+    javafx.scene.control.Label text;
+    @FXML
+    TextField textfield;
+    @FXML
+    javafx.scene.control.Label result;
+    @FXML
+    TextField retextfield;
+    @FXML
+    javafx.scene.control.Label reresult;
 
-        SpinnerListModel spinAdapter = new SpinnerListModel(parseType);
-        spinner.(spinAdapter);
-        panel.add(typeSelecter);
-        Dimension selectorSize = new Dimension(120, 30);
-        typeSelecter.setPreferredSize(selectorSize);
-        typeSelecter.setMinimumSize(selectorSize);
+    public void initialize(URL location, ResourceBundle resources) {
+        DatabaseUtils utils = new DatabaseUtils();
+        ArrayList<String> getTitle = utils.getFinanceArray(true);
+        ArrayList<String> getFinance = utils.getFinanceArray(false);
+
+        currentUSDFinance = Double.parseDouble(getTitle.get(0).replace(",", ""));
+        text.setText("현재 USD 달러 환율 : " + getTitle.get(0));
+        textfield.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent ke) {
+                if (ke.getCode().equals(KeyCode.ENTER)) {
+                    String text = textfield.getText().toString();
+                    try {
+                        double resultdouble = Double.parseDouble(text) / currentUSDFinance;
+                        result.setText(text + " 원을 USD 달러로 환전하면 " + resultdouble + " 달러 입니다");
+                    } catch (Exception e) {
+                        result.setText("실수 범위의 수를 입력해주세요!");
+                    }
+                }
+            }
+        });
+        retextfield.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent ke) {
+                if (ke.getCode().equals(KeyCode.ENTER)) {
+                    String text = retextfield.getText().toString();
+                    try {
+                        double resultdouble = Double.parseDouble(text) * currentUSDFinance;
+                        reresult.setText(text + " 달러를 원화로 환전하면 " + resultdouble + " 원 입니다");
+                    } catch (Exception e) {
+                        reresult.setText("실수 범위의 수를 입력해주세요!");
+                    }
+                }
+            }
+        });
     }
 }

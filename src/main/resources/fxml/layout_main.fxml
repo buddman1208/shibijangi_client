@@ -4,13 +4,21 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Spinner?>
-<VBox style="-fx-background-color: #33aa00" fx:controller="MainController" xmlns:fx="http://javafx.com/fxml" >    <!-- HBox 컨테이너 선언 -->
+<?import javafx.scene.control.TextField?>
+<VBox style="-fx-background-color: #455A64" fx:controller="MainController"
+      xmlns:fx="http://javafx.com/fxml">    <!-- HBox 컨테이너 선언 -->
     <padding>
-        <Insets top="10" right="10" bottom="10" left="10" />
+        <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
-    <spacing>10</spacing>
+    <spacing>20</spacing>
     <children>
-        <Spinner fx:id="spinner" minWidth="480"/>
-        <Label style="-fx-font: 30 Arial;" textFill="white" minWidth="480" minHeight="800" textAlignment="CENTER" alignment="CENTER" text="Loading Data"/>
+        <Label fx:id="text" style="-fx-font: 15 Arial;" textFill="white" minWidth="480" textAlignment="CENTER"
+               alignment="CENTER"/>
+        <TextField fx:id="textfield" minWidth="420" alignment="CENTER" />
+        <Label fx:id="result" style="-fx-font: 13 Arial;" textFill="white" minWidth="480" textAlignment="CENTER"
+               alignment="CENTER"/>
+        <TextField fx:id="retextfield" minWidth="420" alignment="CENTER" />
+        <Label fx:id="reresult" style="-fx-font: 13 Arial;" textFill="white" minWidth="480" textAlignment="CENTER"
+               alignment="CENTER"/>
     </children>
 </VBox>
