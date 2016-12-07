@@ -39,13 +39,15 @@ public class MainController implements Initializable {
 
         currentUSDFinance = Double.parseDouble(getTitle.get(0).replace(",", ""));
         text.setText("현재 USD 달러 환율 : " + getTitle.get(0));
+        result.setText("원 -> 달러 환전");
+        reresult.setText("달러 -> 원 환전");
         textfield.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent ke) {
                 if (ke.getCode().equals(KeyCode.ENTER)) {
                     String text = textfield.getText().toString();
                     try {
-                        double resultdouble = Double.parseDouble(text) / currentUSDFinance;
+                        String resultdouble = String.format("%.5f", Double.parseDouble(text) / currentUSDFinance);
                         result.setText(text + " 원을 USD 달러로 환전하면 " + resultdouble + " 달러 입니다");
                     } catch (Exception e) {
                         result.setText("실수 범위의 수를 입력해주세요!");
@@ -59,7 +61,7 @@ public class MainController implements Initializable {
                 if (ke.getCode().equals(KeyCode.ENTER)) {
                     String text = retextfield.getText().toString();
                     try {
-                        double resultdouble = Double.parseDouble(text) * currentUSDFinance;
+                        String resultdouble = String.format("%.5f", Double.parseDouble(text) * currentUSDFinance);
                         reresult.setText(text + " 달러를 원화로 환전하면 " + resultdouble + " 원 입니다");
                     } catch (Exception e) {
                         reresult.setText("실수 범위의 수를 입력해주세요!");

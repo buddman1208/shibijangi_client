@@ -5,6 +5,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <VBox style="-fx-background-color: #455A64" fx:controller="MainController"
       xmlns:fx="http://javafx.com/fxml">    <!-- HBox 컨테이너 선언 -->
     <padding>
@@ -12,6 +14,11 @@
     </padding>
     <spacing>20</spacing>
     <children>
+        <ImageView fitWidth="200" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../title_fastsearch.png" />
+            </image>
+        </ImageView>
         <Label fx:id="text" style="-fx-font: 15 Arial;" textFill="white" minWidth="480" textAlignment="CENTER"
                alignment="CENTER"/>
         <TextField fx:id="textfield" minWidth="420" alignment="CENTER" />
